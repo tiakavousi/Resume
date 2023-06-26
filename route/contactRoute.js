@@ -13,14 +13,14 @@ router.post('/contact',(req,res)=>{
         service:"Gmail",
         port:465,
         auth:{
-            user:'tayebekavousi1989@gmail.com',
+            user:process.env.GOOGLE_EMAIL,
             pass:process.env.GOOGLE_PASS
 
         }
     })
     let mailOptions = {
         from:data.email,
-        to:'tayebekavousi1989@gmail.com',
+        to:process.env.GOOGLE_EMAIL,
         subject:`message from ${data.name}`,
         html:`
         <h3> informations: </h3>
