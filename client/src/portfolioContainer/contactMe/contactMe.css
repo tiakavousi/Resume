@@ -71,6 +71,7 @@
   }
   
   form label {
+    font-size: 0.5rem;
     margin-bottom: 5px;
     color: #111;
     letter-spacing: 0.2rem;
@@ -128,8 +129,9 @@
     width: 60px;
     color: green;
   }
+  
   .col i {
-    padding: 7px;
+    padding: 15px;
     color: #fff;
   }
   .col i:hover {

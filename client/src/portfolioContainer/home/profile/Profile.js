@@ -1,6 +1,7 @@
 import React from "react";
 import './profile.css';
 import ScrollService from "../../../utilities/ScrollService";
+
 export default function Profile() {
   return (
     <div className="profile-container">
@@ -8,20 +9,11 @@ export default function Profile() {
         <div className="profile-details">
           <div className="colz">
             <div className="colz-icons">
-              <a href="#">
-                <i className="fa fa-facebook-square"></i>
+              <a href="https://github.com/tiakavousi">
+                <i className="fa fa-github"></i>
               </a>
-              <a href="#">
-                <i className="fa fa-google-plus-square"></i>
-              </a>
-              <a href="#">
-                <i className="fa fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i className="fa fa-youtube"></i>
-              </a>
-              <a href="#">
-                <i className="fa fa-twitter"></i>
+              <a href="https://www.linkedin.com/in/tia-kavousi/">
+                <i className="fa fa-linkedin"></i>
               </a>
             </div>
           </div>
@@ -29,13 +21,13 @@ export default function Profile() {
           <div className="profile-details-name">
             <span className="primary-text">
               {" "}
-              hello I am <span className="highlighted-text">Tia</span>
+              Hello I am <span className="highlighted-text">Tia</span>
             </span>
           </div>
           <div className="profile-details-role">
             <span className="pimary-text">
               <span className="profile-role-tagline">
-                Fron-end developer
+                Front-end developer
               </span>
             </span>
           </div>

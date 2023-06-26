@@ -70,21 +70,15 @@ export default function ContactMe(props) {
       <div className="central-form">
         <div className="col">
           <h2 className="title"> Get In Touch </h2>
-          <a href="#">
-            <i className="fa fa-facebook-square"></i>
-          </a>
-          <a href="#">
-            <i className="fa fa-google-plus-square"></i>
-          </a>
-          <a href="#">
-            <i className="fa fa-instagram"></i>
-          </a>
-          <a href="#">
-            <i className="fa fa-youtube"></i>
-          </a>
-          <a href="#">
-            <i className="fa fa-twitter"></i>
-          </a>
+          <a href="https://github.com/tiakavousi">
+                <i className="fa fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/tia-kavousi/">
+                <i className="fa fa-linkedin"></i>
+              </a>
+              <a href="#">
+                <i className="fa fa-envelope"></i>
+              </a>
         </div>
         <div className="back-form">
           <div className="img-back">
@@ -95,6 +89,7 @@ export default function ContactMe(props) {
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
+
 
             <label htmlFor="email">Email</label>
             <input type="email" onChange={handleEmail} value={email} />

@@ -14,18 +14,17 @@ export default function AboutMe(props) {
 
   const SCREEN_CONSTSANTS = {
     description:
-      "Highly motivated and self-taught front-end developer with over 3 years of experience"+
-       "in personal projects. Currently pursuing a degree of Software Development at IU "+
-       " University (online campus)."+
-       " Passionate about technology and eager to"+
+      "Highly motivated front-end developer with over 3 years of experience "+
+       "in personal projects. \nCurrently pursuing a degree of Software Development at IU "+
+       " University (online campus).\nPassionate about technology and eager to"+
        " take on new challenges. I am confident in my ability to quickly adapt to new technologies"+
        " and contribute effectively to your organization's success.",
     highlights: {
       bullets: [
-        "Interactive Front End as per the design",
-        "React Library",
-        "Redux for State Mnanagement",
-        "Responsive web design",
+        "Web enthusiastic",
+        "Continuous Learner",
+        "Problem Solver",
+        "Cat person as you can guess"
       ],
       heading: "Here are a Few Highlights:",
     },

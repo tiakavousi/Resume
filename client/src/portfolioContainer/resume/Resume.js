@@ -1,16 +1,18 @@
-import React, {useState, useEffect} from 'react';
-import ScreenHeading from '../../utilities/screenHeading/ScreenHeading';
-import ScrollService from '../../utilities/ScrollService';
-import Animations from '../../utilities/Animations';
-import './resume.css';
-import interests from '../../assets/Resume/interests.svg';
-import workHistory from '../../assets/Resume/work-history.svg';
-import programmingSkills from '../../assets/Resume/programming-skills.svg';
-import projects from '../../assets/Resume/projects.svg';
-import education from '../../assets/Resume/education.svg'
+import React, { useState, useEffect } from "react";
+import ScreenHeading from "../../utilities/screenHeading/ScreenHeading";
+import ScrollService from "../../utilities/ScrollService";
+import Animations from "../../utilities/Animations";
+import "./resume.css";
+import interests from "../../assets/Resume/interests.svg";
+import workHistory from "../../assets/Resume/work-history.svg";
+import programmingSkills from "../../assets/Resume/programming-skills.svg";
+import projects from "../../assets/Resume/projects.svg";
+import education from "../../assets/Resume/education.svg";
+import books from "../../assets/Resume/books.svg";
+import certificate from "../../assets/Resume/certificate.svg";
 
 export default function Resume(props) {
-    /* STATES */
+  /* STATES */
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
 
@@ -19,7 +21,8 @@ export default function Resume(props) {
 
     Animations.animations.fadeInScreen(props.id);
   };
-  const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   /* REUSABLE MINOR COMPONENTS */
   const ResumeHeading = (props) => {
@@ -49,10 +52,11 @@ export default function Resume(props) {
   /* STATIC RESUME DATA FOR THE LABELS*/
   const resumeBullets = [
     { label: "Education", logoSrc: education },
-    { label: "Work History", logoSrc: workHistory },
     { label: "Programming Skills", logoSrc: programmingSkills },
+    { label: "Certificates", logoSrc: certificate },
     { label: "Projects", logoSrc: projects },
-    { label: "Interests", logoSrc: interests }
+    { label: "Work History", logoSrc: workHistory },
+    { label: "Studies", logoSrc: books },
   ];
 
   const programmingSkillsDetails = [
@@ -76,14 +80,14 @@ export default function Resume(props) {
       description:
         "Online ecommerce website for showcasing and selling products onlne with payment system integration, sign in and sign up features, Firebase, Stripe API ",
       subHeading:
-        "Technologies Used: React Js, Redux, GraphQL, Firebase and more"
+        "Technologies Used: React Js, Redux, GraphQL, Firebase and more",
     },
   ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
-        heading={"University of Applied Science(UI), Germany (on Campus)"}
+        heading={"University of Applied Science(UI), Germany (Online)"}
         subHeading={"BACHELOR OF SOFTWARE DEVELOPMENT"}
         fromDate={"2022"}
         toDate={"2025"}
@@ -95,34 +99,6 @@ export default function Resume(props) {
         fromDate={"2012"}
         toDate={"2015"}
       />
-    </div>,
-
-    /* WORK EXPERIENCE */
-    <div className="resume-screen-container" key="work-experience">
-      <div className="experience-container">
-        <ResumeHeading
-          heading={"Ehizeex Technoloy"}
-          subHeading={"FULL STACK DEVELOPER INTERN"}
-          fromDate={"2021"}
-          toDate={"Present"}
-        />
-        <div className="experience-description">
-          <span className="resume-description-text">
-            Self study and personal projects on GitHub: 
-          </span>
-          <a>HTTPS://GITHUB.COM/TIAKAVOUSI</a>
-        </div>
-        <div className="experience-description">
-          <span className="resume-description-text">
-            - Developed an ecommerce website with sign in , sign up, payment etc. .
-          </span>
-          <br />
-          <span className="resume-description-text">
-          HSE  supervisor, leading a team and gaining worthful experiences in leadership and teamwork.
-          </span>
-          <br />
-        </div>
-      </div>
     </div>,
 
     /* PROGRAMMING SKILLS */
@@ -143,6 +119,25 @@ export default function Resume(props) {
         </div>
       ))}
     </div>,
+    /* Certificates */
+    <div className="resume-screen-container" key="certificates">
+      <ResumeHeading
+        heading="Coursera"
+        description="Interactivity with JavaScript"
+      />
+      <ResumeHeading
+        heading="Coursera"
+        description="Introduction to HTML5,CSS"
+      />
+      <ResumeHeading
+        heading="Coursera"
+        description="Advanced Styling with Responsive Design"
+      />
+      <ResumeHeading
+        heading="Solo Learn"
+        description="HTML, CSS and jQuery Fundamentals"
+      />
+    </div>,
 
     /* PROJECTS */
     <div className="resume-screen-container" key="projects">
@@ -157,24 +152,57 @@ export default function Resume(props) {
         />
       ))}
     </div>,
-
-    /* Interests */
-    <div className="resume-screen-container" key="interests">
-      <ResumeHeading
-        heading="Coursera"
-        description="Interactivity with JavaScript"
-      />
-      <ResumeHeading
-        heading="Coursera"
-        description="Introduction to HTML5,CSS"
-      />
-      <ResumeHeading
-        heading="Coursera"
-        description="Advanced Styling with Responsive Design"
-      />
+    /* WORK HISTORY */
+    <div className="resume-screen-container" key="work-experience">
+      <div className="experience-container">
         <ResumeHeading
-        heading="Solo Learn"
-        description="HTML, CSS and jQuery Fundamentals"
+          heading={"Damandeh Company"}
+          subHeading={"HSE  supervisor"}
+          fromDate={"2017"}
+          toDate={"2019"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            Leading a team and gaining worthful experiences in leadership and
+            teamwork.
+          </span>
+        </div>
+        <ResumeHeading
+          heading={"ARPC Company"}
+          subHeading={"HSE  Officer"}
+          fromDate={"2011"}
+          toDate={"2017"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            Conducting Risk assessment and medical examinations for over 2500
+            people.
+          </span>
+        </div>
+      </div>
+    </div>,
+
+    /* Studies */
+    <div className="resume-screen-container" key="studies">
+      <ResumeHeading
+        heading="You don’t know JS"
+        description="Author: Kyle Simpson (series 1. Up and Going 2. Scope & Closures 3. This & Object Prototype 4. Types & Grammar 5. Async & Performance)"
+      />
+      <ResumeHeading
+        heading="The modern JavaScript tutorials"
+        description="Author: Iliakan (series 1. The JavaScript Language 2. Browser: Document, Events, Interfaces 3. Additional Articles)"
+      />
+      <ResumeHeading
+        heading="Headfirst HTML and CSS"
+        description="Author: Elisabeth Robson & Eric Freeman"
+      />
+      <ResumeHeading
+        heading="Headfirst JavaScript Programming "
+        description="Author: Elisabeth Robson & Eric Freeman •	Linux with operating system concepts by Richard Fox"
+      />
+      <ResumeHeading
+        heading="Linux with operating system concepts"
+        description="Author: Richard Fox"
       />
     </div>,
   ];
@@ -199,11 +227,7 @@ export default function Resume(props) {
         }
         key={index}
       >
-        <img
-          className="bullet-logo"
-          src={`${bullet.logoSrc}`}
-          alt="B"
-        />
+        <img className="bullet-logo" src={`${bullet.logoSrc}`} alt="B" />
         <span className="bullet-label">{bullet.label}</span>
       </div>
     ));
@@ -228,9 +252,12 @@ export default function Resume(props) {
   }, [fadeInSubscription]);
 
   return (
-    <div className="resume-container screen-container fade-in" id={props.id || ""}>
+    <div
+      className="resume-container screen-container fade-in"
+      id={props.id || ""}
+    >
       <div className="resume-content">
-        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <ScreenHeading title={"Resume"} subHeading={"My Curriculum vitae"} />
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">
@@ -243,5 +270,5 @@ export default function Resume(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
