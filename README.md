@@ -8,8 +8,8 @@ This is a personal resume/portfolio website built with React.js and Node.js Expr
 2. Connect your repository to Vercel
 3. During deployment setup:
    - Set the root directory to `/`
-   - Set the build command to `npm run build --prefix client`
-   - Set the output directory to `client/build`
+   - Vercel will use the configuration in `vercel.json`
+   - No additional configuration should be needed
 
 ## Environment Variables for Vercel
 
