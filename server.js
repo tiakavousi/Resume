@@ -21,5 +21,8 @@ if (process.env.NODE_ENV === "production") {
     );
   }
 
-const port = process.env.PORT || 5000;
-app.listen(port, console.log(`server listening to port 5001`));
+const port = process.env.PORT || 5001;
+app.listen(port, console.log(`server listening to port ${port}`));
+
+// Export for Vercel serverless function
+module.exports = app;
